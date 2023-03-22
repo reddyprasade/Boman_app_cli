@@ -1,27 +1,12 @@
-# This is a basic workflow to help you get started with boman.ai
+Auth:
+  project_token: "38fb343f-8590-4c6a-ba23-6780ae69f7ef"    #"35c4ec30-7b90-4030-a847-a03701b75a6f"        
+  customer_token: "d8a90f5c-b4ed-40ea-a83d-7a4bcb103bc0"    #"d8a90f5c-b4ed-40ea-a83d-7a4bcb103bc0"       
+SAST:
+ language: "python" 
+DAST:
+  type: "WEB"
+  URL: "https://demo.testfire.net/"
+SCA:
+  language: "python"
 
-name: Bomanai Scanner
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  Boman-scan:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      
-      # Runs a single command using the runners shell
-      - name: Install packages
-        run: pip install boman-cli
-      - name: Run scan  
-        run: boman-cli -a run
+Secret_Scan: true
